@@ -1,26 +1,37 @@
 import React from 'react';
 import logo from './logo.svg';
+import FilmGrid from './FilmGrid.js';
 import './App.css';
 
-function App() {
+function MontageApp() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <div className="app">
+      <header className="app-header">
+        <span className="header-text"><span className="start">mon</span><span className="end">tage.</span></span>
+        <nav className="main-nav">
+          <ul>
+            <li><a>Home</a></li>
+            <li className="active">
+              <div className="arrow"></div>
+              <a>Watch Movies</a>
+            </li>
+            <li><a>Film Crew</a></li>
+          </ul>
+        </nav>
+        <div class="search-container">
+          <form action="/search" method="get">
+            <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search"/>
+            <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
+          </form>
+        </div>
+        {/* <img src={logo} className="App-logo" alt="logo" /> */}
       </header>
+      <div className="film-grid">
+        <FilmGrid/>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default MontageApp;
+

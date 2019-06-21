@@ -1,27 +1,332 @@
-.App {
+body{
+  background-color: rgb(247, 245, 245);
+}
+.app {
   text-align: center;
+}
+
+h3{
+  margin: 20px;
+  text-align: left;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  letter-spacing: 1px;
+  color: #555;
+}
+
+nav.main-nav .active{
+  background-color: #bd3d81;
+}
+
+.arrow {
+  top: 50px;
+  margin: 28px;
+  z-index: 9999;
+	position:absolute;
+  width:0;
+  height:0;
+  border-bottom:20px solid transparent;
+  border-right:20px solid transparent;
+  border-top:20px solid #bd3d81;
+  border-left:20px solid transparent;
+}
+
+.search-container {
+	position: relative;
+  display: inline-block;
+  margin-top: 30px;
+  height: 25px;
+	width: 50px;
+  vertical-align: bottom;
+  text-align: left;
+}
+
+.mglass {
+	display: inline-block;
+	pointer-events: none;
+}
+
+.searchbutton {
+  top: -15px;
+  left: 10px;
+  text-align: left;
+	font-size: 40px;
+  width: 100%;
+  position: absolute;
+	margin-top: 0px;
+  padding: 0;
+}
+
+.search:focus + .searchbutton {
+	transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+	color: black;
+}
+
+.search {
+	position: absolute;
+	left: 49px; 
+  background-color:#333;
+  color: #eee;
+	outline: none;
+	border: none;
+	padding: 0;
+	width: 0;
+	height: 100%;
+	z-index: 10;
+	transition-duration: 0.4s;
+	-moz-transition-duration: 0.4s;
+	-webkit-transition-duration: 0.4s;
+	-o-transition-duration: 0.4s;
+}
+.search::placeholder{
+  color: #eee;
+}
+
+.search:focus {
+  width: 150px; 
+  height: 25px;
+	padding: 0 16px 0 0;
+}
+
+.expandright {
+	left: auto;
+	right: 49px;
+}
+
+.expandright:focus {
+  border: 1px solid #eee;
+  border-radius: 10px;
+	padding: 0 0 0 16px;
+}
+
+nav.main-nav{
+  float: left;
+  font-size: 16px;
+  margin: 0 auto;
+  height: 80px;
+}
+nav.main-nav ul{
+  height: 100%;
+  margin: auto auto;
+}
+nav.main-nav ul li{
+  display: inline-block;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 100%;
+}
+nav.main-nav ul li a {
+  line-height: 75px;
+  text-decoration: none;
+  color: #eee;
 }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+  height: 20vmin;
   pointer-events: none;
+  padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+.app-header {
+  padding-left: 5%;
+  position: -webkit-sticky;
+  position: sticky;
+  display: block;
+  background: rgb(41,21,24);
+  background: linear-gradient(90deg, rgba(41,21,24,1) 0%, rgba(97,41,41,1) 50%, rgba(156,40,40,1) 100%);  min-height: 20px;
+  height: 80px;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
 
+.header-text{
+  font-family: 'Roboto', sans-serif;
+  margin: 20px;
+  margin-left: 100px;
+  float: left;
+}
+
+.header-text .start{
+  color: #ac2f71;
+}
+
 .App-link {
   color: #61dafb;
 }
+
+.film-grid{
+  padding-top: 20px;
+  background: #eee;
+  margin: 0 auto;
+  max-width: 1100px;
+}
+
+.film-img{
+ max-width: 100%;
+ max-height: 100%;
+ height: 100%;
+ width: 100%;
+ object-fit: cover;
+ border-radius: 2px;
+ filter: brightness(70%);
+}
+
+
+.film-container{
+  width: 25%;
+  display:inline-block;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.film-tile{
+  margin: 0 auto;
+  position: relative;
+  height: 340px;
+  width: 240px;
+  -webkit-box-shadow: 0px 0px 5px 0px rgb(177, 176, 176);
+  -moz-box-shadow: 0px 0px 5px 0px rgb(177, 176, 176);
+  box-shadow: 0px 0px 5px 0px rgb(177, 176, 176);
+}
+
+.film-container:hover .film-info-cover{
+  opacity: 1;
+}
+
+.film-info-cover{
+  border-radius: 2px;
+  background: rgba(0, 0, 0, .6);
+  opacity: 0;
+  position: absolute;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  -webkit-transition: opacity .2s ease-in;
+  -moz-transition: opacity .2s ease-in;
+  -o-transition: opacity .2s ease-in;
+  -ms-transition: opacity .2s ease-in;
+  transition: opacity .2s ease-in;
+  z-index: 9998;
+  position: absolute;
+  width: auto;
+  height: 100%;
+}
+
+.film-info-text{
+  z-index: 9999;
+  height: 245px;
+  position: relative;
+  padding: 10px;
+  color: #eee;
+  line-height: 25px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+
+.film-tag {
+  text-align: left;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0px;
+  height: 60px;
+  margin: auto;
+  z-index: 1000;
+  background-color: #fff;
+  color: #333;
+  font-weight: lighter;
+}
+
+.film-title{
+  position: relative;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 18px;
+  color: #333;
+  text-overflow: ellipsis;
+  width: 180px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.film-genres{
+  position: relative;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+.film-year {
+  float: left;
+  position: absolute;
+  left: 5px;
+  bottom: 60px;
+  z-index: 1000;
+  padding: 5px;
+  color: #ddd;
+}
+
+.film-rating {
+  border: 1px solid#ac2f71;
+  border-radius: 2px;
+  border-right-width: 2px;
+  border-bottom-width: 2px;
+  padding: 4px;
+  float: right;
+  z-index: 9999;
+  position: relative;
+  bottom: 35px;
+  left: -10px;
+  font-size: 12px;
+  color: #ac2f71;
+}
+
+
+/* Tablets Landscape */
+@media screen and (max-width: 1024px) {
+  .film-container{
+    width: 33%;
+  }
+}
+
+/* Tablets Portrait */
+@media screen and (max-width: 768px) {
+  .film-container{
+    width: 50%;
+    margin: 0px;
+  }
+  .app-header{
+    padding-left: 0px;
+  }
+
+}
+
+/* Phones (Landscape and lower) */
+@media screen and (max-width: 480px) {
+  .film-container{
+    width: 100%;
+    margin: 0px;
+  }
+  
+  nav.main-nav{
+    visibility: hidden;
+  }
+
+}
+ 
 
 @keyframes App-logo-spin {
   from {
@@ -31,3 +336,5 @@
     transform: rotate(360deg);
   }
 }
+
+
