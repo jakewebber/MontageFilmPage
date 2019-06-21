@@ -1,3 +1,6 @@
+![screenshot](https://github.com/jakewebber/MontageFilmPage/blob/master/pctLjuM.jpg)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
