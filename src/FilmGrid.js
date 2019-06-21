@@ -126,9 +126,9 @@ class FilmGrid extends React.Component {
     this.filterNav = this.filterNav.bind(this);
   }  
 
-  filterNav(filter){
-    
-    switch(filter) {
+  filterNav(selectedFilter){
+    this.setState({filter: selectedFilter});
+    switch(selectedFilter) {
       case navOptions.all:
         {
           this.setState({ 
@@ -194,6 +194,7 @@ class FilmGrid extends React.Component {
   }
 
   filterGenre(genre){
+    this.setState({filter: genre});
     this.setState({ 
       filmData : films.filter(function(film){
         return film.genres.includes(genre)
