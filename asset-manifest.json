@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/MontageFilmPage/static/css/main.7acf1cce.chunk.css",
+    "main.js": "/MontageFilmPage/static/js/main.29eebeec.chunk.js",
+    "main.js.map": "/MontageFilmPage/static/js/main.29eebeec.chunk.js.map",
+    "runtime~main.js": "/MontageFilmPage/static/js/runtime~main.9065e7d7.js",
+    "runtime~main.js.map": "/MontageFilmPage/static/js/runtime~main.9065e7d7.js.map",
+    "static/js/2.c953d15a.chunk.js": "/MontageFilmPage/static/js/2.c953d15a.chunk.js",
+    "static/js/2.c953d15a.chunk.js.map": "/MontageFilmPage/static/js/2.c953d15a.chunk.js.map",
+    "index.html": "/MontageFilmPage/index.html",
+    "precache-manifest.3f3211e394376c9b58eba99fe120a2e3.js": "/MontageFilmPage/precache-manifest.3f3211e394376c9b58eba99fe120a2e3.js",
+    "service-worker.js": "/MontageFilmPage/service-worker.js",
+    "static/css/main.7acf1cce.chunk.css.map": "/MontageFilmPage/static/css/main.7acf1cce.chunk.css.map",
+    "static/media/logo.svg": "/MontageFilmPage/static/media/logo.6f7cd384.svg"
+  }
+}
