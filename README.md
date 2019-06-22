@@ -1,5 +1,38 @@
-![screenshot](https://github.com/jakewebber/MontageFilmPage/blob/master/pctLjuM.jpg)
+## Infinite Scrolling / Pagination:
+When implementing infinite scrolling, it's important to determine whether the actual loading of the next content section is going to come from preloading the entire data collection from the server to store client-side or whether it will have to be done in parts server-side as scrolling continues. 
 
+Preloading the entire collection provides the benefit of quick response time with the UI, but is less feasible for larger collections of data due to a larger initial overhead load.  
+
+For larger data sets: the partial fetching from the server during scroll is best done by fetching larger portions of the data collection than needed for the display. This minimizes the wait time for the next iteration of the page as scrolling continues.
+
+To fire the loading function, we need to check if the user has hit the bottom of the page. This can be done by checking if  
+
+```current window / viewport height ``` + ```current distance from top``` == ``` total document height ```
+
+in a scroll event listener.
+
+
+
+In both loading scenarios we'll need to store variable of total items loaded client-side. This ```entryCount``` will be used to keep track of what index to start at for the next loading batch. If we're fetching larger portions of data than being displayed, we'll need a count for the total displayed from the last load as well to know the index for where to start our display function. The collection should be an ordered data type like a list or array rather than a hashtable so that the skip index can be implemented. 
+
+To determine if we've reached the end of the total collection, we will store the count of total entries in the collection in the database. if ```totalEntries``` != ```entryCount```, we can continue firing our fetch function when the user scrolls to bottom. Otherwise, the entire collection has been fetched. 
+
+Another constant variable will store the ```take``` amount. Every time we fetch that ```take``` amount from the database, the ```count``` will increment by that amount. 
+```javascript
+const takeAmount = 50;
+var skipIndex = 0;
+function fetch(){
+  // open db connection
+   var collection = dbSource.getOrderedData().skip(amount).take(index);
+   skipIndex += collection.length; // store new skip amount for next fetch.
+}
+```
+
+
+
+
+
+![screenshot](https://github.com/jakewebber/MontageFilmPage/blob/master/pctLjuM.jpg)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
