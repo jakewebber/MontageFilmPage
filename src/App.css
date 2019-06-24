@@ -182,9 +182,6 @@ nav.main-nav ul li a {
 
 
 .film-container{
-  width: 25%;
-  display:inline-block;
-  text-align: center;
   margin-bottom: 20px;
 }
 
@@ -298,10 +295,6 @@ nav.main-nav ul li a {
 
 /* Tablets Landscape */
 @media screen and (max-width: 1024px) {
-  .film-container{
-    width: 33%;
-  }
-
   .film-grid{
     grid-template-columns: 240px 240px 240px;
   }
@@ -310,11 +303,6 @@ nav.main-nav ul li a {
 
 /* Tablets Portrait */
 @media screen and (max-width: 768px) {
-  .film-container{
-    width: 50%;
-    margin: 0px;
-  }
-
   .film-grid{
     grid-template-columns: 240px 240px;
     grid-gap: 10px;
@@ -338,15 +326,9 @@ nav.main-nav ul li a {
 
 /* Phones (Landscape and lower) */
 @media screen and (max-width: 480px) {
-  .film-container{
-    width: 100%;
-    margin: 0px;
-  }
-
   .film-grid{
     grid-template-columns: 240px;
   }
-
 }
  
 
