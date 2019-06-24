@@ -30,7 +30,7 @@ const genres = [
   'Western',
 ]
 
-/** Finishing  */
+/** Filters film page by various categories.  */
 class FilmNavigation extends React.Component {
   constructor(props){
     super(props);
@@ -92,7 +92,7 @@ class FilmNavigation extends React.Component {
           <li className={this.state.clickedNav == navOptions.genre ? 'active' : ''}>
             <a href="#" onClick={this.showGenreDropdown}>{navOptions.genre}  &#9660;</a>
             { this.state.showGenreDropdown ? (
-              <ul class="nav-dropdown">
+              <ul className="nav-dropdown">
                   {
                     genres.map((genre) => {
                       return (
@@ -107,14 +107,13 @@ class FilmNavigation extends React.Component {
             ) : ( null )
             }
           </li>
-            
         </ul>
     </nav>
     );
   }
 }
 
-
+/** Displays films from JSON in a responsive grid. */
 class FilmGrid extends React.Component {
   constructor(props) {
     super(props);
@@ -206,12 +205,10 @@ class FilmGrid extends React.Component {
     return (
       <div>
         <FilmNavigation updateFilter={this.filterNav} updateFilterGenre={this.filterGenre}/>
-      <div className="gallery-container">
-        <h3>{this.state.filter} Independent Movies</h3>
-        <div className="gallery-grid">
+        <h3 className="film-grid-header">{this.state.filter} Independent Movies</h3>
+        <div className="film-grid">
           {this.state.filmData.map(this.renderImageContent)}
         </div>
-      </div>
       </div>
 
     )
@@ -219,9 +216,8 @@ class FilmGrid extends React.Component {
 
   renderImageContent(film, index) {
     return (
-      <div className="film-container">
+      <div key={index} className="film-container">
         <FilmContainer 
-        id={film.id} 
         title={film.title} 
         rating={film.imdbRating} 
         year={film.year}  
@@ -243,7 +239,7 @@ class FilmContainer extends React.Component {
     }
 
     render () {
-      const { id, title, rating, genres, year, posterURL, storyline } = this.props;
+      const { title, rating, genres, year, posterURL, storyline } = this.props;
       return(
         <div className="film-tile">
           <div className="film-year">{year}</div>
@@ -257,7 +253,7 @@ class FilmContainer extends React.Component {
           <div className="film-info-cover">
             <div className="film-info-text">{storyline}</div>
           </div>
-          <img className="film-img" src={posterURL} key={posterURL} />
+          <img className="film-img" src={posterURL} />
         </div>
       );
     }

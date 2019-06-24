@@ -1,12 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import FilmGrid from './FilmGrid.js';
 import './App.css';
 
 function MontageApp() {
   return (
     <div className="app">
-      <header className="app-header">
+      <header className="montage-header">
         <span className="header-text"><span className="start">mon</span><span className="end">tage.</span></span>
         <nav className="main-nav">
           <ul>
@@ -18,15 +17,14 @@ function MontageApp() {
             <li><a>Film Crew</a></li>
           </ul>
         </nav>
-        <div class="search-container">
+        <div className="search-container">
           <form action="/search" method="get">
-            <input class="search expandright" id="searchright" type="search" name="q" placeholder="Search"/>
-            <label class="button searchbutton" for="searchright"><span class="mglass">&#9906;</span></label>
+            <input className="search expandright" id="searchright" type="search" name="q" placeholder="Search"/>
+            <label className="button searchbutton" htmlFor="searchright"><span className="mglass">&#9906;</span></label>
           </form>
         </div>
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
       </header>
-      <div className="film-grid">
+      <div className="film-grid-container">
         <FilmGrid/>
       </div>
     </div>
