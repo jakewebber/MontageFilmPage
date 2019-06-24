@@ -7,7 +7,7 @@ For larger data sets: the partial fetching from the server during scroll is best
 
 To fire the loading function, we need to check if the user has hit the bottom of the page. This can be done by checking if  
 
-```current window / viewport height ``` + ```current distance from top``` == ``` total document height ```
+```current window or viewport height ``` + ```current distance from top``` == ``` total document height ```
 
 in a scroll event listener.
 
