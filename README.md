@@ -25,6 +25,7 @@ function fetch(){
   // open db connection
    var collection = dbSource.getOrderedData().skip(amount).take(index);
    skipIndex += collection.length; // store new skip amount for next fetch.
+   return collection;
 }
 ```
 
